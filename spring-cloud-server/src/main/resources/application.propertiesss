@@ -1,0 +1,23 @@
+
+## Server config
+server.port=8888
+
+#
+management.context_path=/mgmt
+
+info.app.name=Config Server
+## Cloud config
+#spring.cloud.config.server.git.uri=ssh://localhost/config-repo
+#spring.cloud.config.server.git.clone-on-start=true
+#security.user.name=root
+#security.user.password=s3cr3
+
+## using spring sample
+spring.cloud.config.server.git.uri=https://github.com/spring-cloud-samples/config-repo
+
+spring.cloud.config.server.git.repos:
+- patterns: iceycake-*
+uri: https://github.com/iceycake/config-repo
+- patterns: project1-*,*-project1
+uri: https://github.com/spring-cloud-samples/config-repo-1
+

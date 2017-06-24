@@ -1,0 +1,30 @@
+## Server config
+server:
+  port: 8888
+management:
+  context_path: /mgmt
+info:
+  app:
+    name:Config Server
+
+## Cloud config GIT Based
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
+
+          ## Multiple repo sample
+#          repos:
+#            team-a:
+#                pattern: team-a-*
+#                cloneOnStart: true
+#                uri: http://git/team-a/config-repo.git
+#            team-b:
+#                pattern: team-b-*
+#                cloneOnStart: false
+#                uri: http://git/team-b/config-repo.git
+#            team-c:
+#                pattern: team-c-*
+#                uri: http://git/team-a/config-repo.git

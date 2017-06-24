@@ -1,0 +1,37 @@
+## Server config
+server:
+  port: 8888
+management:
+  context_path: /mgmt
+info:
+  app:
+    name:Config Server
+
+## Cloud config File System based
+
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:/home/user/git/spring-cloud/spring-cloud-server/src/main/resources/config, classpath:config1/
+
+#turn off if buss not needed
+#    bus:
+#      enabled: false
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+          ## Multiple repo sample
+#          repos:
+#            team-a:
+#                pattern: team-a-*
+#                cloneOnStart: true
+#                uri: http://git/team-a/config-repo.git
+#            team-b:
+#                pattern: team-b-*
+#                cloneOnStart: false
+#                uri: http://git/team-b/config-repo.git
+#            team-c:
+#                pattern: team-c-*
+#                uri: http://git/team-a/config-repo.git
